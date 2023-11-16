@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Inspect and open console to see result for exercise 2</h2>
+    <script>
+        function giveChange(amount) {
+    const banknotes = [200, 100, 50, 20, 10, 5, 1];
+    const banknotesReturned = [];
+  
+    banknotes.forEach(function(banknote) {
+      const numberOfBanknotes = Math.floor(amount / banknote);
+      banknotesReturned[banknote] = numberOfBanknotes;
+      amount %= banknote;
+    });
+  
+    return banknotesReturned;
+  }
+  
+  const amount = 369;
+  const change = giveChange(amount);
+  
+  console.log("Change for "+amount);
+  for (const banknote in change) {
+    if (change[banknote] > 0) {
+      console.log(change[banknote]+" x "+ banknote +" banknote(s)");
+    }
+  }
+  
+    </script>
+</body>
+</html>

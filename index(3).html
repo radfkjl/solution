@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Inspect and open console to see result for exercise 3</h2>
+    <script>
+        function validateCreditCardNumber(creditCardNumber) {
+    const reversedNumber = creditCardNumber.toString().split('').reverse();
+    let sum = 0;
+  
+    reversedNumber.forEach(function(digit, index) {
+      let num = parseInt(digit, 10);
+  
+      if (index % 2 === 1) {
+        num *= 2;
+        if (num > 9) {
+          num -= 9;
+        }
+      }
+  
+      sum += num;
+    });
+  
+    const isValid = sum % 10 === 0;
+  
+    console.log(`Credit Card Number: ${creditCardNumber}`);
+    console.log("Validation: "+isValid ? 'Validated' : 'Not Validated');
+  }
+  
+  const creditCardNumber = '4532015112830366';
+  validateCreditCardNumber(creditCardNumber);
+  
+    </script>
+    
+</body>
+</html>
